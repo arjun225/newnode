@@ -36,10 +36,15 @@ jobs: #<-- start the jobs encapsulation
       - name: Run test
         run: npm test
       #MALLI
-      #new
-     # - name: Deploy the application
-      #  run: npm run deploy
-       # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  deploy:    #new
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+  
+      - name: Deploy the application
+        run: npm run deploy
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       #- name: Archive npm fail logs
        # uses: actions/upload-artifact@v2
         #if: failure()
