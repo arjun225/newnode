@@ -34,6 +34,7 @@ jobs: #<-- start the jobs encapsulation
       - name: Run test
         run: npm test
       #MALLI
+      #new
      # - name: Deploy the application
       #  run: npm run deploy
        # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
