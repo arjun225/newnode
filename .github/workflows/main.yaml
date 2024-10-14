@@ -37,6 +37,11 @@ jobs: #<-- start the jobs encapsulation
         run: npm test
       #MALLI
   deploy:    #new
+     #needs: build
+     needs:
+       types:
+         - build
+         - test
      runs-on: ubuntu-latest
      steps:
       - name: Checkout code
