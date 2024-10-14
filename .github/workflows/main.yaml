@@ -39,7 +39,6 @@ jobs: #<-- start the jobs encapsulation
   deploy:    #new
      #needs: build
      needs:
-       types:
          - build
          - test
      runs-on: ubuntu-latest
