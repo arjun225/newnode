@@ -36,6 +36,18 @@ jobs: #<-- start the jobs encapsulation
       - name: Run test
         run: npm test
       #MALLI
+  stg:    #new
+     #needs: build
+     needs:
+         - build
+         - test
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+  
+      - name: Deploy the application
+        run: npm run deploy    
   deploy:    #new
      #needs: build
      needs:
