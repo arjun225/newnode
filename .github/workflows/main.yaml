@@ -30,6 +30,8 @@ jobs: #<-- start the jobs encapsulation
       - name: Install dependencies
         run: npm ci
       - name: Run tests
+        run: npm cache clear --force
+      - name: Run test
         run: npm test
       #MALLI
      # - name: Deploy the application
